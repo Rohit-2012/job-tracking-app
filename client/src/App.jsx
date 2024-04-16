@@ -4,13 +4,26 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
+import { HomeLayout, Landing, Register, Login, DashboardLayout, Error } from './pages'
+
+const checkDefaultTheme = () => {
+  const isDarkTheme = localStorage.getItem('darkTheme') === 'true'
+  document.body.classList.toggle("dark-theme", isDarkTheme)
+  return isDarkTheme
+}
+
+const isDarkThemeEnabled = checkDefaultTheme()
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
-      <Route path="/" element={<h1>home</h1>} />
-      <Route path="/about" element={<h1>about</h1>} />
-    </>
+    <Route path="/" element={<HomeLayout />} errorElement={<Error />}>
+      <Route index element={<Landing />} />
+      <Route path="register" element={<Register />} />
+      <Route path="login" element={<Login />} />
+      <Route path="dashboard" element={<DashboardLayout isDarkThemeEnabled={ isDarkThemeEnabled} />}>
+
+      </Route>
+    </Route>
   )
 );
 
