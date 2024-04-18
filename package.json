@@ -1,0 +1,30 @@
+{
+  "name": "job-tracking-app",
+  "version": "1.0.0",
+  "description": " A comprehensive app to manage job applications, interviews, and offers. Stay organized with reminders, notes, and progress tracking. Simplify your job search",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup-project": "npm i && cd client && npm i",
+    "dev": "nodemon server.js"
+  },
+  "author": "Rohit Kirti",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.6",
+    "dayjs": "^1.11.10",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-validator": "^7.0.1",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.3.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^5.0.7",
+    "nodemon": "^3.1.0"
+  }
+}
