@@ -16,7 +16,7 @@ export const getJob = async (req, res) => {
   const { id } = req.params;
 
   const job = await Job.findById(id);
-  res.status(StatusCodes.OK).json(job);
+  res.status(StatusCodes.OK).json({job});
 };
 
 export const updateJob = async (req, res) => {
