@@ -15,7 +15,8 @@ import {
   Stats,
   AllJobs,
   EditJob,
-  Admin
+  Admin,
+  Profile, 
 } from "./pages";
 import { action as registerAction } from "./pages/Register";
 import { action as loginAction } from "./pages/Login";
@@ -26,7 +27,8 @@ import { loader as editJobLoader } from './pages/EditJob';
 import { action as editJobAction } from './pages/EditJob';
 import { action as deleteJobAction } from './pages/DeleteJob';
 import { loader as adminLoader } from './pages/Admin';
-import Profile, { action as profileAction } from './pages/Profile';
+import { action as profileAction } from './pages/Profile';
+import { loader as statsLoader } from './pages/Stats';
 
 const checkDefaultTheme = () => {
   const isDarkTheme = localStorage.getItem("darkTheme") === "true";
@@ -48,7 +50,7 @@ const router = createBrowserRouter(
         loader={dashboardLoader}
       >
         <Route index element={<AddJob />} action={addJobAction} />
-        <Route path="stats" element={<Stats />} />
+        <Route path="stats" element={<Stats />} loader={statsLoader} />
         <Route path="all-jobs" element={<AllJobs />} loader={allJobsLoader} />
         <Route path="profile" element={<Profile />} action={profileAction} />
         <Route path="admin" element={<Admin />} loader={adminLoader} />
