@@ -39,8 +39,8 @@ const Login = () => {
       <Form method='' className="form">
         <Logo />
         <h4>login</h4>
-        <FormRow type="email" name="email" defaultValue="rohit@example.com" />
-        <FormRow type="password" name="password" defaultValue="Rohit" />
+        <FormRow type="email" name="email" />
+        <FormRow type="password" name="password"/>
         <SubmitBtn />
         <button type="button" className="btn btn-block" onClick={loginDemoUser}>
           explore the app
