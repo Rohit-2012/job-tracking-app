@@ -4,11 +4,12 @@ import { FormRow, Logo, SubmitBtn } from '../components';
 import customFetch from '../utils/customFetch';
 import { toast } from 'react-toastify';
 
-export const action = async ({ request }) => {
+export const action = (queryClient) =>  async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
   try {
     await customFetch.post('/auth/login', data)
+    queryClient.invalidateQueries()
     toast.success('Login successful')
     return redirect('/dashboard')
   } catch (error) {
